@@ -17,7 +17,7 @@ function handler(msg, editbox)
 	end
  -- Any leading non-whitespace is captured into command;
  -- the rest (minus leading whitespace) is captured into rest.
- if command == "y" and arg1 ~= nil then
+ if command == "all" and arg1 ~= nil then
   print("completed")
 	for q,i  in pairs(arg1)do
 		if (IsQuestFlaggedCompleted(i)) then
@@ -26,7 +26,7 @@ function handler(msg, editbox)
 			print(string.format("\124cffff0000\124h[%s]\124h\124r", q))
 		end
 	  end
-	 elseif command == "n" and arg1 ~= nil then
+	 elseif command == "not" and arg1 ~= nil then
 	 print("not completed")
 	 	for q,i  in pairs(arg1)do
 		if not (IsQuestFlaggedCompleted(i)) then
